@@ -49,7 +49,7 @@ public class ControllerPlacingScene {
     public TextField shipsToPlace;
     public BorderPane gui;
 
-    Game game = new Game();
+    GameController game = new GameController();
 
     @FXML
     public void initialize(){

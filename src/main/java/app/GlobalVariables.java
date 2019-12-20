@@ -9,7 +9,7 @@ public class GlobalVariables {
 
     public static boolean turn = false;
 
-    public static Game game = null;
+    public static GameController game = null;
 
     public static SendingThread sendingThread = null;
 
@@ -61,11 +61,11 @@ public class GlobalVariables {
         GlobalVariables.gameName = gameName;
     }
 
-    public static void setGame(Game game){
+    public static void setGame(GameController game){
         GlobalVariables.game = game;
     }
 
-    public static Game getGame(){
+    public static GameController getGame(){
         return GlobalVariables.game;
     }
 

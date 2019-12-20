@@ -10,8 +10,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import main.java.app.Game;
+import main.java.app.GameController;
 import main.java.app.GlobalVariables;
+import main.java.app.ReceivingThread;
 
 
 public class ControllerGameScene {
@@ -109,7 +110,7 @@ public class ControllerGameScene {
     private ObservableList<String> items = FXCollections.observableArrayList();
     public Button[][] myPanel = new Button[6][6];
     public Button[][] enemyPanel = new Button[6][6];
-    Game game;
+    GameController game;
     
     @FXML
     public void initialize(){
@@ -118,7 +119,7 @@ public class ControllerGameScene {
         initEnemyButtons();
         game = GlobalVariables.getGame();
         updateMyPane();
-        GlobalVariables.getReceivingThread().setControllerGameScene(this);
+        ReceivingThread.setControllerGameScene(this);
         numberOfMyShips.setText(String.valueOf(GlobalVariables.game.myLives));
         numberOfEnemyShips.setText(String.valueOf(GlobalVariables.game.enemyLives));
         setEnemyGridPaneDisable();
