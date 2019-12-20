@@ -1,11 +1,12 @@
 package main.java.app;
 
+import javafx.scene.control.Alert;
 import main.java.controllers.*;
 
 public class GlobalVariables {
-    public static boolean playerOneRepeat = false;
+    public static boolean playerRepeat = false;
 
-    public static boolean playerTwoRepeat = false;
+    public static long waitingTime = 0;
 
     public static boolean turn = false;
 
@@ -40,6 +41,16 @@ public class GlobalVariables {
     }
 
     public static String opponentName = null;
+
+    public static Alert getAlert() {
+        return alert;
+    }
+
+    public static void setAlert(Alert alert) {
+        GlobalVariables.alert = alert;
+    }
+
+    public static Alert alert = null;
 
     public static String messagePattern(int messageSize) {
         String pattern;

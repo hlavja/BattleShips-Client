@@ -37,7 +37,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/main/resources/scenes/loginScene.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("/main/resources/scenes/placingScene.fxml"));
         primaryStage.setTitle("Bottle Ships");
-        primaryStage.setScene(new Scene(root, 900, 600));
+        primaryStage.setScene(new Scene(root, 500, 300));
         primaryStage.show();
         guiStage = primaryStage;
 

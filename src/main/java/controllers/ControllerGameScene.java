@@ -1,18 +1,19 @@
 package main.java.controllers;
 
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import main.java.app.GameController;
 import main.java.app.GlobalVariables;
 import main.java.app.ReceivingThread;
+
+import java.util.Optional;
 
 
 public class ControllerGameScene {
@@ -125,6 +126,20 @@ public class ControllerGameScene {
         setEnemyGridPaneDisable();
         //GlobalVariables.getReceivingThread().setControllerRoomPickerScene(this);
         //GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(2) + "04");
+    }
+
+    
+
+    public void resetGame(){
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
+                GlobalVariables.game.enemyShipPanel[i][j] = 0;
+                GlobalVariables.game.myShipPanel[i][j] = 0;
+            }
+        }
+        GlobalVariables.game.enemyLives = 6;
+        GlobalVariables.game.myLives = 6;
+        GlobalVariables.game.placeShip = 6;
     }
 
     public void updateEnemyPane(int result, int x, int y) {
@@ -463,4 +478,28 @@ public class ControllerGameScene {
         enemyBtn00.getStyleClass().add("enemy-disable");
         setEnemyGridPaneDisable();
     }
+
+    public void showAlert(int i) {
+      Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        if (i == 0){
+            alert.setTitle("LOST");
+        } else {
+            alert.setTitle("WON");
+        }
+        alert.setResizable(false);
+        GlobalVariables.setAlert(alert);
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent()){
+            if(result.get() == ButtonType.CANCEL){
+                int size = 2 + GlobalVariables.gameName.length();
+                GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(size) + "06" + GlobalVariables.gameName);
+            } else if (result.get() == ButtonType.OK){
+                //GlobalVariables.playerRepeat = true;
+                int size = 2 + GlobalVariables.playerName.length() + 1 + GlobalVariables.gameName.length() + 1;
+                GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(size) + "12" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";");
+                GlobalVariables.playerRepeat = true;
+            }
+        }
+
+   }
 }

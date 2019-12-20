@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
+import static main.java.app.GlobalVariables.playerRepeat;
+
 public class ReceivingThread extends Thread {
 
 
@@ -185,6 +187,36 @@ public class ReceivingThread extends Thread {
                     } else {
                         //disconnectClient();
                     }
+                }
+
+                if (command[0].equals("won")){
+                    Platform.runLater(() ->controllerGameScene.showAlert(1));
+                }
+
+                if (command[0].equals("lost")){
+                    Platform.runLater(() ->controllerGameScene.showAlert(0));
+                }
+
+                if (playerRepeat){
+                    if (command[0].equals("repeat")){
+                        GlobalVariables.waitingTime = 0;
+                        Platform.runLater(() -> controllerGameScene.resetGame());
+                        Platform.runLater(() -> GlobalVariables.sceneChanger.changeToPlacingScene());
+                    } else if (GlobalVariables.waitingTime < GameConfiguration.waitForOpponent){
+                        GlobalVariables.waitingTime++;
+                    } else if (GlobalVariables.waitingTime == GameConfiguration.waitForOpponent){
+                        Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
+                        //send endGame
+                        //GlobalVariables.getSendingThread().sendMessage("00214");
+                    }
+
+                }
+
+                if (command[0].equals("endGame")){
+                    //if (GlobalVariables.getAlert().isShowing()){
+                    //    GlobalVariables.getAlert().hide();
+                    //}
+                    Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
                 }
 
 
