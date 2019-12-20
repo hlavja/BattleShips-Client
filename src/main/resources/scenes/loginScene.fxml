@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="gui" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" stylesheets="/main/resources/css/loginSceneStyle.css" xmlns:fx="http://javafx.com/fxml" fx:controller="main.java.controllers.ControllerLoginScene">
+   <center>
+      <AnchorPane fx:id="pane" focusTraversable="true" prefHeight="300.0" prefWidth="526.0" BorderPane.alignment="CENTER">
+         <TextField fx:id="playerName" layoutX="162.0" layoutY="101.0" prefHeight="27.0" prefWidth="185.0" promptText="Player name" />
+         <TextField fx:id="serverIPAddress" layoutX="162.0" layoutY="130.0" prefHeight="27.0" prefWidth="184.0" promptText="Server IP address" text="192.168.1.85" />
+         <Label fx:id="title" graphicTextGap="2.0" layoutX="74.0" layoutY="24.0" text="BottleShips" textAlignment="CENTER">
+            <font>
+               <Font size="46.0" />
+            </font>
+         </Label>
+         <TextField fx:id="serverPort" layoutX="163.0" layoutY="159.0" prefHeight="27.0" prefWidth="183.0" promptText="Server port" text="15000" />
+         <Button fx:id="connectToServerBtn" layoutX="188.0" layoutY="201.0" mnemonicParsing="false" onAction="#connectToServer" prefHeight="28.0" prefWidth="132.0" text="LOG IN" />
+         <Label layoutX="371.0" layoutY="243.0" text="STATUS:" textFill="BLACK">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Label>
+         <TextField fx:id="statusTextField" editable="false" layoutX="320.0" layoutY="262.0" prefHeight="27.0" prefWidth="166.0" text="DISCONNECTED" />
+      </AnchorPane>
+   </center>
+</BorderPane>

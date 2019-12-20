@@ -1,0 +1,28 @@
+.button:hover{
+    -fx-background-image: url('/main/resources/img/ship2.jpg');
+    -fx-background-repeat: no-repeat;
+}
+
+.disabled{
+    -fx-background-color: #60B0C0;
+    -fx-border-color: #3d8bc0;
+}
+
+.disabled:hover{
+    -fx-background-image: url('/main/resources/img/bg_button.jpg');
+}
+
+.button {
+    -fx-background-color: #60B0C0;
+    -fx-border-color: #3d8bc0;
+}
+
+#readyButton{
+    -fx-background-color: #cbcbcb;
+    -fx-border-color: #a8a8a8;
+}
+
+#readyButton:hover{
+    -fx-background-image: none;
+    -fx-background-color: #6eff5e;
+}
