@@ -1,5 +1,5 @@
 .button:hover{
-    -fx-background-image: url('/main/resources/img/ship2.jpg');
+    -fx-background-image: url('/main/resources/img/ship.png');
     -fx-background-repeat: no-repeat;
 }
 
@@ -9,7 +9,7 @@
 }
 
 .disabled:hover{
-    -fx-background-image: url('/main/resources/img/bg_button.jpg');
+    -fx-background-image: url('/main/resources/img/backgroundButton.jpg');
 }
 
 .button {

@@ -174,6 +174,7 @@ public class ReceivingThread extends Thread {
                                 Platform.runLater(() -> controllerGameScene.setEnemyGridPaneEnable());
                                 GlobalVariables.game.myShipPanel[x][y] = 2;
                                 Platform.runLater(() -> controllerGameScene.updateMyPane());
+                                GlobalVariables.game.myLives--;
                             } else if (command[1].equals("miss")){
                                 Platform.runLater(() -> controllerGameScene.statusText.setText("Your TURN"));
                                 Platform.runLater(() -> controllerGameScene.setEnemyGridPaneEnable());
@@ -189,12 +190,47 @@ public class ReceivingThread extends Thread {
                     }
                 }
 
+                if (command[0].equals("activePlacing")){
+                    Platform.runLater(() -> GlobalVariables.sceneChanger.changeToPlacingScene());
+                    GlobalVariables.opponentName = command[1];
+                }
+
+                if (command[0].equals("activeGame")){
+                    GlobalVariables.opponentName = command[1];
+                    GlobalVariables.game = new GameController();
+                    GlobalVariables.game.initializeMyPane(command[2]);
+                    GlobalVariables.game.initializeEnemyPane(command[3]);
+                    if (command[4].equals("1")){
+                        Platform.runLater(() -> controllerGameScene.statusText.setText("Your turn!"));
+                        Platform.runLater(() -> controllerGameScene.setEnemyGridPaneEnable());
+                    } else if (command[4].equals("0")){
+                        Platform.runLater(() -> controllerGameScene.statusText.setText("Enemy turn!"));
+                        Platform.runLater(() -> controllerGameScene.setEnemyGridPaneDisable());
+                    }
+                    Platform.runLater(() -> GlobalVariables.sceneChanger.changeToGameScene());
+                    //send game state (activeGame;roomname;myplacing;enemyplacing;turn\n)
+
+                }
+
+                if (command[0].equals("logged")){
+                    Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
+                }
+
                 if (command[0].equals("won")){
-                    Platform.runLater(() ->controllerGameScene.showAlert(1));
+                    if (command.length == 2 && command[1].equals("rooms")) {
+                        Platform.runLater(() ->controllerGameScene.showAlert(3));
+                        Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
+                    } else {
+                        Platform.runLater(() ->controllerGameScene.showAlert(1));
+                    }
                 }
 
                 if (command[0].equals("lost")){
                     Platform.runLater(() ->controllerGameScene.showAlert(0));
+                }
+
+                if (command[0].equals("nickTaken")){
+                    Platform.runLater(() -> GlobalVariables.sceneChanger.changeToLoginScene());
                 }
 
                 if (playerRepeat){

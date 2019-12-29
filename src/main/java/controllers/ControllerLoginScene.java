@@ -95,7 +95,8 @@ public class ControllerLoginScene {
 
         int messageSize = 2 + GlobalVariables.playerName.length();
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "01" + GlobalVariables.playerName);
-        Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
+        gui.setDisable(true);
+        //Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
     }
 
 
@@ -107,7 +108,7 @@ public class ControllerLoginScene {
     @FXML
     public void initialize(){
         SceneChanger sceneChanger = new SceneChanger();
-        gui.setStyle("-fx-background-image: url('/main/resources/img/bg.png');");
+        gui.setStyle("-fx-background-image: url('/main/resources/img/background.png'); -fx-background-position: center center;");
         GlobalVariables.sceneChanger = sceneChanger;
       /*  if(GlobalVariables.playerOneRepeat && GlobalVariables.playerTwoRepeat){
             initAfterGame();

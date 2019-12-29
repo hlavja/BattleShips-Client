@@ -158,13 +158,13 @@ public class ControllerGameScene {
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 6; j++) {
                 if (game.myShipPanel[i][j] == 1){
-                    myPanel[i][j].setStyle("-fx-background-image: url('/main/resources/img/ship2.jpg'); -fx-background-repeat: no-repeat;");
+                    myPanel[i][j].setStyle("-fx-background-image: url('/main/resources/img/ship.png'); -fx-background-repeat: no-repeat;");
                 } else if (game.myShipPanel[i][j] == 2){
                     myPanel[i][j].setStyle("-fx-background-image: url('/main/resources/img/fire.png'); -fx-background-repeat: no-repeat;");
                 } else if (game.myShipPanel[i][j] == 3){
                     myPanel[i][j].setStyle("-fx-background-image: url('/main/resources/img/miss.png'); -fx-background-repeat: no-repeat;");
                 } else {
-                    myPanel[i][j].setStyle("-fx-background-image: url('/main/resources/img/bg_button.jpg'); -fx-background-repeat: no-repeat;");
+                    myPanel[i][j].setStyle("-fx-background-image: url('/main/resources/img/backgroundButton.jpg'); -fx-background-repeat: no-repeat;");
                 }
             }
         }
@@ -253,7 +253,7 @@ public class ControllerGameScene {
         enemyGridPane.setDisable(false);
     }
 
-    private void setEnemyGridPaneDisable() {
+    public void setEnemyGridPaneDisable() {
         updateLives();
         enemyGridPane.setDisable(true);
     }
@@ -266,216 +266,252 @@ public class ControllerGameScene {
     public void fire00(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";0;0;");
         enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn00.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire01(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";0;1;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn01.getStyleClass().add("enemy-disable");
+        enemyBtn01.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire02(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";0;2;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn02.getStyleClass().add("enemy-disable");
+        enemyBtn02.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire03(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";0;3;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn03.getStyleClass().add("enemy-disable");
+        enemyBtn03.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire04(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";0;4;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn04.getStyleClass().add("enemy-disable");
+        enemyBtn04.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire05(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";0;5;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn05.getStyleClass().add("enemy-disable");
+        enemyBtn05.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire10(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";1;0;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn10.getStyleClass().add("enemy-disable");
+        enemyBtn10.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire11(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";1;1;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn11.getStyleClass().add("enemy-disable");
+        enemyBtn11.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire12(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";1;2;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn12.getStyleClass().add("enemy-disable");
+        enemyBtn12.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire13(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";1;3;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn13.getStyleClass().add("enemy-disable");
+        enemyBtn13.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire14(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";1;4;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn14.getStyleClass().add("enemy-disable");
+        enemyBtn14.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire15(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";1;5;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn15.getStyleClass().add("enemy-disable");
+        enemyBtn15.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire20(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";2;0;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn20.getStyleClass().add("enemy-disable");
+        enemyBtn20.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire21(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";2;1;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn21.getStyleClass().add("enemy-disable");
+        enemyBtn21.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire22(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";2;2;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn22.getStyleClass().add("enemy-disable");
+        enemyBtn22.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire23(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";2;3;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn23.getStyleClass().add("enemy-disable");
+        enemyBtn23.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire24(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";2;4;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn24.getStyleClass().add("enemy-disable");
+        enemyBtn24.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire25(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";2;5;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn25.getStyleClass().add("enemy-disable");
+        enemyBtn25.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire30(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";3;0;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn30.getStyleClass().add("enemy-disable");
+        enemyBtn30.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire31(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";3;1;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn31.getStyleClass().add("enemy-disable");
+        enemyBtn31.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire32(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";3;2;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn32.getStyleClass().add("enemy-disable");
+        enemyBtn32.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire33(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";3;3;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn33.getStyleClass().add("enemy-disable");
+        enemyBtn33.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire34(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";3;4;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn34.getStyleClass().add("enemy-disable");
+        enemyBtn34.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire35(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";3;5;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn35.getStyleClass().add("enemy-disable");
+        enemyBtn35.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire40(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";4;0;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn40.getStyleClass().add("enemy-disable");
+        enemyBtn40.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire41(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";4;1;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn41.getStyleClass().add("enemy-disable");
+        enemyBtn41.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire42(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";4;2;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn42.getStyleClass().add("enemy-disable");
+        enemyBtn42.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire43(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";4;3;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn43.getStyleClass().add("enemy-disable");
+        enemyBtn43.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire44(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";4;4;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn44.getStyleClass().add("enemy-disable");
+        enemyBtn44.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire45(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";4;5;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn45.getStyleClass().add("enemy-disable");
+        enemyBtn45.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire50(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";5;0;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn50.getStyleClass().add("enemy-disable");
+        enemyBtn50.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire51(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";5;1;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn51.getStyleClass().add("enemy-disable");
+        enemyBtn51.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire52(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";5;2;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn52.getStyleClass().add("enemy-disable");
+        enemyBtn52.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire53(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";5;3;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn53.getStyleClass().add("enemy-disable");
+        enemyBtn53.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire54(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";5;4;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn54.getStyleClass().add("enemy-disable");
+        enemyBtn54.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
     public void fire55(ActionEvent actionEvent) {
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "10" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";5;5;");
-        enemyBtn00.getStyleClass().add("enemy-disable");
+        enemyBtn55.getStyleClass().add("enemy-disable");
+        enemyBtn55.setDisable(true);
         setEnemyGridPaneDisable();
     }
 
@@ -483,23 +519,26 @@ public class ControllerGameScene {
       Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         if (i == 0){
             alert.setTitle("LOST");
+            alert.setContentText("YOU LOST! BETTER LUCK NEXT TIME!");
         } else {
             alert.setTitle("WON");
+            alert.setContentText("YOU WON! PLAY MORE TO RECEIVE ADMIRAL MEDAL!");
         }
         alert.setResizable(false);
-        GlobalVariables.setAlert(alert);
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent()){
-            if(result.get() == ButtonType.CANCEL){
-                int size = 2 + GlobalVariables.gameName.length();
-                GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(size) + "06" + GlobalVariables.gameName);
-            } else if (result.get() == ButtonType.OK){
-                //GlobalVariables.playerRepeat = true;
-                int size = 2 + GlobalVariables.playerName.length() + 1 + GlobalVariables.gameName.length() + 1;
-                GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(size) + "12" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";");
-                GlobalVariables.playerRepeat = true;
+        if (i != 3) {
+            GlobalVariables.setAlert(alert);
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent()) {
+                if (result.get() == ButtonType.CANCEL) {
+                    int size = 2 + GlobalVariables.gameName.length();
+                    GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(size) + "06" + GlobalVariables.gameName);
+                } else if (result.get() == ButtonType.OK) {
+                    GlobalVariables.playerRepeat = true;
+                    int size = 2 + GlobalVariables.playerName.length() + 1 + GlobalVariables.gameName.length() + 1;
+                    GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(size) + "12" + GlobalVariables.playerName + ";" + GlobalVariables.gameName + ";");
+                    GlobalVariables.playerRepeat = true;
+                }
             }
         }
-
    }
 }

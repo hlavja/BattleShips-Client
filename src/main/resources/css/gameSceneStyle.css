@@ -2,6 +2,15 @@
     -fx-background-image: none;
 }
 
+.button:disabled{
+    -fx-opacity: 1.0;
+    -fx-text-fill: black;
+}
+
+#enemyGridPane.disabled{
+    -fx-opacity: 0.5;
+}
+
 .button:hover{
     -fx-background-image: url("/main/resources/img/bomb.png");
     -fx-background-repeat: no-repeat;

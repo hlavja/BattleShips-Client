@@ -43,4 +43,23 @@ public class GameController {
         }
     }
 
+    public void initializeMyPane(String myPlacing) {
+        int position = 0;
+        for (int i = 0; i < GameConfiguration.gridSize; i++) {
+            for (int j = 0; j < GameConfiguration.gridSize; j++) {
+                myShipPanel[i][j] = Integer.parseInt(String.valueOf(myPlacing.charAt(position)));
+                position++;
+            }
+        }
+    }
+
+    public void initializeEnemyPane(String enemyPlacing) {
+        int position = 0;
+        for (int i = 0; i < GameConfiguration.gridSize; i++) {
+            for (int j = 0; j < GameConfiguration.gridSize; j++) {
+                myShipPanel[i][j] = Integer.parseInt(String.valueOf(enemyPlacing.charAt(position)));
+                position++;
+            }
+        }
+    }
 }

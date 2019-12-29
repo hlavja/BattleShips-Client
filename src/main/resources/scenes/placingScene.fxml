@@ -1,135 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="gui" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="/main/resources/css/placingSceneStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml" fx:controller="main.java.controllers.ControllerPlacingScene">
+<BorderPane fx:id="gui" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="/main/resources/css/placingSceneStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.ControllerPlacingScene">
     <top>
-        <AnchorPane prefHeight="82.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-            <Label alignment="CENTER" layoutX="229.0" layoutY="18.0" prefHeight="36.0" prefWidth="143.0"
-                   text="Place your ships" AnchorPane.topAnchor="18.0">
+        <AnchorPane prefHeight="79.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <Label alignment="CENTER" layoutX="197.0" layoutY="18.0" prefHeight="36.0" prefWidth="211.0" text="Ship placing stage" AnchorPane.topAnchor="18.0">
                 <font>
-                    <Font size="18.0"/>
+                    <Font size="18.0" />
                 </font>
             </Label>
         </AnchorPane>
     </top>
     <bottom>
-        <Pane prefHeight="68.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-            <Label layoutX="479.0" layoutY="12.0" text="STATUS:" textAlignment="CENTER" textOverrun="CLIP"
-                   wrapText="true">
+        <Pane prefHeight="38.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <Label layoutX="363.0" layoutY="10.0" text="STATUS:" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
                 <font>
-                    <Font name="System Bold" size="13.0"/>
+                    <Font name="System Bold" size="13.0" />
                 </font>
             </Label>
-            <TextField fx:id="shipsToPlace" editable="false" layoutX="99.0" layoutY="7.0" prefHeight="52.0"
-                       prefWidth="46.0" text="6">
-                <font>
-                    <Font size="24.0"/>
-                </font>
-            </TextField>
-            <Button fx:id="readyButton" disable="true" layoutX="258.0" layoutY="20.0" mnemonicParsing="false"
-                    onAction="#sendPlacing" prefHeight="27.0" prefWidth="84.0" text="READY"/>
-            <Label contentDisplay="CENTER" layoutX="14.0" layoutY="29.0" text="Ships to place"/>
-            <TextField fx:id="statusTextField" editable="false" layoutX="415.0" layoutY="28.0" prefHeight="27.0"
-                       prefWidth="171.0" text="Place your ships"/>
+            <TextField fx:id="statusTextField" editable="false" layoutX="415.0" layoutY="6.0" prefHeight="27.0" prefWidth="171.0" text="Place your ships" />
 
         </Pane>
     </bottom>
     <center>
-        <GridPane BorderPane.alignment="CENTER">
+        <GridPane prefHeight="291.0" prefWidth="276.0" BorderPane.alignment="CENTER">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
-            <Button fx:id="btn11" mnemonicParsing="false" onAction="#placeShip11" prefHeight="74.0" prefWidth="50.0"/>
-            <Button fx:id="btn21" mnemonicParsing="false" onAction="#placeShip21" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.rowIndex="1"/>
-            <Button fx:id="btn12" mnemonicParsing="false" onAction="#placeShip12" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="1"/>
-            <Button fx:id="btn22" mnemonicParsing="false" onAction="#placeShip22" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-            <Button fx:id="btn31" mnemonicParsing="false" onAction="#placeShip31" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.rowIndex="2"/>
-            <Button fx:id="btn32" mnemonicParsing="false" onAction="#placeShip32" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-            <Button fx:id="btn41" mnemonicParsing="false" onAction="#placeShip41" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.rowIndex="3"/>
-            <Button fx:id="btn43" mnemonicParsing="false" onAction="#placeShip43" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="2" GridPane.rowIndex="3"/>
-            <Button fx:id="btn42" mnemonicParsing="false" onAction="#placeShip42" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-            <Button fx:id="btn51" mnemonicParsing="false" onAction="#placeShip51" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.rowIndex="4"/>
-            <Button fx:id="btn52" mnemonicParsing="false" onAction="#placeShip52" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-            <Button fx:id="btn53" mnemonicParsing="false" onAction="#placeShip53" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="2" GridPane.rowIndex="4"/>
-            <Button fx:id="btn54" mnemonicParsing="false" onAction="#placeShip54" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="3" GridPane.rowIndex="4"/>
-            <Button fx:id="btn44" mnemonicParsing="false" onAction="#placeShip44" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="3" GridPane.rowIndex="3"/>
-            <Button fx:id="btn33" mnemonicParsing="false" onAction="#placeShip33" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-            <Button fx:id="btn34" mnemonicParsing="false" onAction="#placeShip34" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="3" GridPane.rowIndex="2"/>
-            <Button fx:id="btn23" mnemonicParsing="false" onAction="#placeShip23" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-            <Button fx:id="btn24" mnemonicParsing="false" onAction="#placeShip24" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="3" GridPane.rowIndex="1"/>
-            <Button fx:id="btn13" mnemonicParsing="false" onAction="#placeShip13" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="2"/>
-            <Button fx:id="btn14" mnemonicParsing="false" onAction="#placeShip14" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="3"/>
-            <Button fx:id="btn61" mnemonicParsing="false" onAction="#placeShip61" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.rowIndex="5"/>
-            <Button fx:id="btn62" mnemonicParsing="false" onAction="#placeShip62" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="1" GridPane.rowIndex="5"/>
-            <Button fx:id="btn63" mnemonicParsing="false" onAction="#placeShip63" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="2" GridPane.rowIndex="5"/>
-            <Button fx:id="btn64" mnemonicParsing="false" onAction="#placeShip64" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="3" GridPane.rowIndex="5"/>
-            <Button fx:id="btn15" mnemonicParsing="false" onAction="#placeShip15" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="4"/>
-            <Button fx:id="btn35" mnemonicParsing="false" onAction="#placeShip35" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="4" GridPane.rowIndex="2"/>
-            <Button fx:id="btn25" mnemonicParsing="false" onAction="#placeShip25" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="4" GridPane.rowIndex="1"/>
-            <Button fx:id="btn45" mnemonicParsing="false" onAction="#placeShip45" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="4" GridPane.rowIndex="3"/>
-            <Button fx:id="btn55" mnemonicParsing="false" onAction="#placeShip55" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="4" GridPane.rowIndex="4"/>
-            <Button fx:id="btn65" mnemonicParsing="false" onAction="#placeShip65" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="4" GridPane.rowIndex="5"/>
-            <Button fx:id="btn16" mnemonicParsing="false" onAction="#placeShip16" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="5"/>
-            <Button fx:id="btn26" mnemonicParsing="false" onAction="#placeShip26" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="5" GridPane.rowIndex="1"/>
-            <Button fx:id="btn36" mnemonicParsing="false" onAction="#placeShip36" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="5" GridPane.rowIndex="2"/>
-            <Button fx:id="btn46" mnemonicParsing="false" onAction="#placeShip46" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="5" GridPane.rowIndex="3"/>
-            <Button fx:id="btn56" mnemonicParsing="false" onAction="#placeShip56" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="5" GridPane.rowIndex="4"/>
-            <Button fx:id="btn66" mnemonicParsing="false" onAction="#placeShip66" prefHeight="74.0" prefWidth="50.0"
-                    GridPane.columnIndex="5" GridPane.rowIndex="5"/>
+            <Button fx:id="btn11" mnemonicParsing="false" onAction="#placeShip11" prefHeight="45.0" prefWidth="45.0" />
+            <Button fx:id="btn21" mnemonicParsing="false" onAction="#placeShip21" prefHeight="45.0" prefWidth="45.0" GridPane.rowIndex="1" />
+            <Button fx:id="btn12" mnemonicParsing="false" onAction="#placeShip12" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="1" />
+            <Button fx:id="btn22" mnemonicParsing="false" onAction="#placeShip22" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="btn31" mnemonicParsing="false" onAction="#placeShip31" prefHeight="45.0" prefWidth="45.0" GridPane.rowIndex="2" />
+            <Button fx:id="btn32" mnemonicParsing="false" onAction="#placeShip32" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="btn41" mnemonicParsing="false" onAction="#placeShip41" prefHeight="45.0" prefWidth="45.0" GridPane.rowIndex="3" />
+            <Button fx:id="btn43" mnemonicParsing="false" onAction="#placeShip43" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button fx:id="btn42" mnemonicParsing="false" onAction="#placeShip42" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="btn51" mnemonicParsing="false" onAction="#placeShip51" prefHeight="45.0" prefWidth="45.0" GridPane.rowIndex="4" />
+            <Button fx:id="btn52" mnemonicParsing="false" onAction="#placeShip52" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button fx:id="btn53" mnemonicParsing="false" onAction="#placeShip53" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button fx:id="btn54" mnemonicParsing="false" onAction="#placeShip54" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Button fx:id="btn44" mnemonicParsing="false" onAction="#placeShip44" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button fx:id="btn33" mnemonicParsing="false" onAction="#placeShip33" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="btn34" mnemonicParsing="false" onAction="#placeShip34" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button fx:id="btn23" mnemonicParsing="false" onAction="#placeShip23" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="btn24" mnemonicParsing="false" onAction="#placeShip24" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button fx:id="btn13" mnemonicParsing="false" onAction="#placeShip13" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="2" />
+            <Button fx:id="btn14" mnemonicParsing="false" onAction="#placeShip14" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="3" />
+            <Button fx:id="btn61" mnemonicParsing="false" onAction="#placeShip61" prefHeight="45.0" prefWidth="45.0" GridPane.rowIndex="5" />
+            <Button fx:id="btn62" mnemonicParsing="false" onAction="#placeShip62" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Button fx:id="btn63" mnemonicParsing="false" onAction="#placeShip63" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Button fx:id="btn64" mnemonicParsing="false" onAction="#placeShip64" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Button fx:id="btn15" mnemonicParsing="false" onAction="#placeShip15" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="4" />
+            <Button fx:id="btn35" mnemonicParsing="false" onAction="#placeShip35" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Button fx:id="btn25" mnemonicParsing="false" onAction="#placeShip25" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button fx:id="btn45" mnemonicParsing="false" onAction="#placeShip45" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Button fx:id="btn55" mnemonicParsing="false" onAction="#placeShip55" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Button fx:id="btn65" mnemonicParsing="false" onAction="#placeShip65" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Button fx:id="btn16" mnemonicParsing="false" onAction="#placeShip16" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="5" />
+            <Button fx:id="btn26" mnemonicParsing="false" onAction="#placeShip26" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Button fx:id="btn36" mnemonicParsing="false" onAction="#placeShip36" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Button fx:id="btn46" mnemonicParsing="false" onAction="#placeShip46" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Button fx:id="btn56" mnemonicParsing="false" onAction="#placeShip56" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Button fx:id="btn66" mnemonicParsing="false" onAction="#placeShip66" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
         </GridPane>
     </center>
    <left>
-      <TabPane prefHeight="250.0" prefWidth="170.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="227.0" prefWidth="159.0" BorderPane.alignment="CENTER">
+         <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="80.0" prefHeight="36.0" prefWidth="136.0" text="Ramining ships" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+               <TextField fx:id="shipsToPlace" editable="false" layoutX="57.0" layoutY="125.0" prefHeight="52.0" prefWidth="46.0" text="6">
+                   <font>
+                       <Font size="24.0" />
+                   </font>
+               </TextField>
+         </children>
+      </Pane>
    </left>
    <right>
-      <TabPane prefHeight="250.0" prefWidth="170.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="242.0" prefWidth="165.0" BorderPane.alignment="CENTER">
+         <children>
+               <Button fx:id="readyButton" disable="true" layoutX="41.0" layoutY="125.0" mnemonicParsing="false" onAction="#sendPlacing" prefHeight="27.0" prefWidth="84.0" text="READY" />
+         </children>
+      </Pane>
    </right>
 </BorderPane>
