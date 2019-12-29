@@ -1,5 +1,5 @@
 ﻿Popis hry:
-https://www.klububoudu.cz/news/vetsi-bere/
+lodě IZI
 
 Spuštění:
 mvn clean javafx:run
