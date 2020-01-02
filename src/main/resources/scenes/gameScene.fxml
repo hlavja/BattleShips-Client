@@ -139,7 +139,7 @@
                         <Font name="System Bold" size="24.0" />
                     </font>
                 </Label>
-                <TextField fx:id="statusText" editable="false" layoutX="8.0" layoutY="412.0" prefHeight="27.0" prefWidth="141.0" />
+                <TextField fx:id="statusText" editable="false" layoutX="8.0" layoutY="412.0" prefHeight="27.0" prefWidth="141.0" text="ENEMY TURN" />
                 <Label layoutX="40.0" layoutY="382.0" text="Remaining number of enemy ships" />
                 <TextField fx:id="numberOfEnemyShips" editable="false" layoutX="238.0" layoutY="377.0" prefHeight="27.0" prefWidth="32.0" />
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="14.0" prefHeight="37.0" prefWidth="65.0" text="stage" textAlignment="CENTER">

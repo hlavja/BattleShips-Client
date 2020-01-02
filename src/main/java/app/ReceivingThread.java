@@ -128,6 +128,7 @@ public class ReceivingThread extends Thread {
                     if (command.length == 2 && command[1].equals("0")){
                         GlobalVariables.turn = true;
                         Platform.runLater(() -> controllerGameScene.setEnemyGridPaneEnable());
+                        Platform.runLater(() -> controllerGameScene.statusText.setText("YOUR TURN"));
                     }
                 }
 
@@ -217,9 +218,8 @@ public class ReceivingThread extends Thread {
                 }
 
                 if (command[0].equals("won")){
-                    if (command.length == 2 && command[1].equals("rooms")) {
-                        Platform.runLater(() ->controllerGameScene.showAlert(3));
-                        Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
+                    if (command.length == 2 && command[1].equals("ping")) {
+                        Platform.runLater(() -> controllerGameScene.showAlert(3));
                     } else {
                         Platform.runLater(() ->controllerGameScene.showAlert(1));
                     }

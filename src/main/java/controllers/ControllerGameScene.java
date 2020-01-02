@@ -539,6 +539,14 @@ public class ControllerGameScene {
                     GlobalVariables.playerRepeat = true;
                 }
             }
+        } else {
+            GlobalVariables.setAlert(alert);
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.CANCEL) {
+                Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());;
+            } else if (result.get() == ButtonType.OK) {
+                Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
+            }
         }
    }
 }
