@@ -1,17 +1,16 @@
 package main.java.controllers;
 
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import main.java.app.*;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 
 public class ControllerRoomPickerScene {
@@ -47,6 +46,19 @@ public class ControllerRoomPickerScene {
 
     public void refreshRooms() {
         GlobalVariables.getSendingThread().sendMessage("00204");
+    }
+
+    public void showAlert(int i) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        if (i == 1){
+            alert.setTitle("Cant create room");
+            alert.setContentText("Room already exists!");
+        }
+        if (i == 2){
+            alert.setTitle("Cant join room");
+            alert.setContentText("Room error!");
+        }
+        alert.setResizable(false);
     }
 
     @FXML

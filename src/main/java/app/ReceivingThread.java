@@ -102,6 +102,20 @@ public class ReceivingThread extends Thread {
                     }
                 }
 
+                //if waiting for opponent placing
+                if (command[0].equals("joinERR")){
+                    //GlobalVariables.setOpponentName(command[1]);
+                    Platform.runLater(() -> controllerRoomPickerScene.showAlert(2));
+                }
+
+
+
+                //if waiting for opponent placing
+                if (command[0].equals("roomERR")){
+                    //GlobalVariables.setOpponentName(command[1]);
+                    Platform.runLater(() -> controllerRoomPickerScene.showAlert(1));
+                }
+
                 //if successfully joined room
                 if (command[0].equals("joined")){
                     //if (GlobalVariables.getGameName().equals(command[1])){

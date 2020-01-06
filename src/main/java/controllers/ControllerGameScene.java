@@ -548,5 +548,5 @@ public class ControllerGameScene {
                 Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
             }
         }
-   }
+    }
 }
