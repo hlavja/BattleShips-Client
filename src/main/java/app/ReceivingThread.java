@@ -254,15 +254,17 @@ public class ReceivingThread extends Thread {
                                                             //    GlobalVariables.getAlert().hide();
                                                             //}
                                                             Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
+                                                        } else if (command[0].equals("roomCreat")) {
+
                                                         } else {
                                                             Platform.runLater(() -> GlobalVariables.sceneChanger.changeToLoginScene());
                                                             Platform.runLater(() -> controllerLoginScene.showAlert(1));
-                                                            if(GlobalVariables.pingThread != null){
-                                                                if (GlobalVariables.pingThread.threadActive){
+                                                            if (GlobalVariables.pingThread != null) {
+                                                                if (GlobalVariables.pingThread.threadActive) {
                                                                     GlobalVariables.pingThread.close();
                                                                 }
                                                             }
-                                                            if (GlobalVariables.connected){
+                                                            if (GlobalVariables.connected) {
                                                                 GlobalVariables.getReceivingThread().disconnectClient();
                                                             }
                                                         }
