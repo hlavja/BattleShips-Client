@@ -15,7 +15,7 @@ public class InputValidate {
     }
 
     public static boolean validateIP(String inputIP){
-        if (inputIP == null || inputIP.isEmpty()){
+        /*if (inputIP == null || inputIP.isEmpty()){
             return false;
         }
         inputIP = inputIP.trim();
@@ -25,12 +25,14 @@ public class InputValidate {
         }
         Pattern pattern = Pattern.compile("^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
         Matcher matcher = pattern.matcher(inputIP);
-        return matcher.matches();
+        return matcher.matches();*/
+        //return InetAddressUtils.isValidInet4Address(inputIP);
+        return true;
     }
 
     public static boolean validatePort(String inputPort){
         int port = Integer.parseInt(inputPort);
-        return port >= 1 && port <= 65535;
+        return port >= 1 && port <= 65535 && port != 22 && port != 20;
     }
 
 
