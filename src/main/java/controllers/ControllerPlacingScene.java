@@ -57,7 +57,7 @@ public class ControllerPlacingScene {
         GlobalVariables.setGame(game);
         statusTextField.setText("CONNECTED");
         ReceivingThread.setControllerPlacingScene(this);
-        GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(2) + "04");
+        //GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(2) + "04");
     }
 
     public void sendPlacing(ActionEvent actionEvent) {

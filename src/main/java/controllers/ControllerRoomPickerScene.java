@@ -66,6 +66,7 @@ public class ControllerRoomPickerScene {
 
             list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
             String[] roomsSplit = GlobalVariables.rooms.split(",");
+            list.getItems().clear();
             items.clear();
             items.addAll(Arrays.asList(roomsSplit));
             list.setItems(items);

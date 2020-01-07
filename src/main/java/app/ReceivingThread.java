@@ -88,7 +88,6 @@ public class ReceivingThread extends Thread {
                 String[] command = message.split(";");
                 if (command.length > 0) {
 
-
                     if (!command[0].equals("ping")) {
                         System.out.println("From server: " + message);
                     }
@@ -268,11 +267,7 @@ public class ReceivingThread extends Thread {
                                                                 GlobalVariables.getReceivingThread().disconnectClient();
                                                             }
                                                         }
-                } else {
-                    Platform.runLater(() -> controllerLoginScene.showAlert(1));
                 }
-
-
             }
         } catch (IOException | InterruptedException g) {
             System.out.println("Receiver: IE");
