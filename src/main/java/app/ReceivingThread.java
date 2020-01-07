@@ -272,9 +272,9 @@ public class ReceivingThread extends Thread {
                     Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
                 } else {
 
+                    Platform.runLater(() -> controllerRoomPickerScene.showAlert(2));
                 }
                 }
-                Platform.runLater(() -> controllerRoomPickerScene.showAlert(2));
 
 
             }
