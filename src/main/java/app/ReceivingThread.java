@@ -99,9 +99,11 @@ public class ReceivingThread extends Thread {
 
                         //parse rooms response
                         if (command[0].equals("rooms")) {
-                            if (command.length > 1) {
+                            if (command.length == 2) {
                                 GlobalVariables.rooms = command[1];
                                 Platform.runLater(() -> controllerRoomPickerScene.fillList());
+                            } else {
+                                Platform.runLater(() -> controllerRoomPickerScene.clearList());
                             }
                         } else
 

@@ -82,4 +82,8 @@ public class ControllerRoomPickerScene {
                 }
             });
     }
+
+    public void clearList() {
+        list.getItems().clear();
+    }
 }
