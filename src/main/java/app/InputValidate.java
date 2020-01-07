@@ -32,7 +32,7 @@ public class InputValidate {
 
     public static boolean validatePort(String inputPort){
         int port = Integer.parseInt(inputPort);
-        return port >= 1 && port <= 65535 && port != 22 && port != 20;
+        return port >= 1 && port <= 65535;
     }
 
 
