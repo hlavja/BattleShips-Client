@@ -85,17 +85,21 @@ public class ReceivingThread extends Thread {
                 //String tmp = new String(inputArray);
 
                 String[] command = message.split(";");
+                if (command.length < 1){
+                    Platform.runLater(() -> controllerRoomPickerScene.showAlert(1));
+                }
+
                 if (command.length > 0 && !command[0].equals("ping")){
                     System.out.println("From server: " + message);
                 }
 
                 //response for server ping
-                if (command[0].equals("ping")){
+                if (command.length > 0 && command[0].equals("ping")){
                     GlobalVariables.getSendingThread().sendMessage("00214");
                 }
 
                 //parse rooms response
-                if (command[0].equals("rooms")){
+                if (command.length > 0 && command[0].equals("rooms")){
                     if (command.length > 1){
                         GlobalVariables.rooms = command[1];
                         Platform.runLater(() ->controllerRoomPickerScene.fillList());
