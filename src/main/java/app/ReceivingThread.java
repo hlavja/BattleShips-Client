@@ -85,32 +85,31 @@ public class ReceivingThread extends Thread {
                 //String tmp = new String(inputArray);
 
                 String[] command = message.split(";");
-                if (command.length < 1){
-                    Platform.runLater(() -> controllerRoomPickerScene.showAlert(1));
-                }
+                if (command.length > 0){
 
-                if (command.length > 0 && !command[0].equals("ping")){
+
+                if (!command[0].equals("ping")){
                     System.out.println("From server: " + message);
                 }
 
                 //response for server ping
-                if (command.length > 0 && command[0].equals("ping")){
+                if (command[0].equals("ping")){
                     GlobalVariables.getSendingThread().sendMessage("00214");
-                }
+                }  else
 
                 //parse rooms response
-                if (command.length > 0 && command[0].equals("rooms")){
+                if (command[0].equals("rooms")){
                     if (command.length > 1){
                         GlobalVariables.rooms = command[1];
                         Platform.runLater(() ->controllerRoomPickerScene.fillList());
                     }
-                }
+                } else
 
                 //if waiting for opponent placing
                 if (command[0].equals("joinERR")){
                     //GlobalVariables.setOpponentName(command[1]);
                     Platform.runLater(() -> controllerRoomPickerScene.showAlert(2));
-                }
+                } else
 
 
 
@@ -118,7 +117,7 @@ public class ReceivingThread extends Thread {
                 if (command[0].equals("roomERR")){
                     //GlobalVariables.setOpponentName(command[1]);
                     Platform.runLater(() -> controllerRoomPickerScene.showAlert(1));
-                }
+                }else
 
                 //if successfully joined room
                 if (command[0].equals("joined")){
@@ -126,19 +125,19 @@ public class ReceivingThread extends Thread {
                         //GlobalVariables.setOpponentName(command[2]);
                         Platform.runLater(() -> GlobalVariables.sceneChanger.changeToPlacingScene());
                    // }
-                }
+                }else
 
                 //if room has two players
                 if (command[0].equals("prepareGame")){
                     //GlobalVariables.setOpponentName(command[1]);
                     Platform.runLater(() -> GlobalVariables.sceneChanger.changeToPlacingScene());
-                }
+                }else
 
                 //if waiting for opponent placing
                 if (command[0].equals("place")){
                     //GlobalVariables.setOpponentName(command[1]);
                     Platform.runLater(() -> controllerPlacingScene.statusTextField.setText("Waiting for opponent placing!"));
-                }
+                } else
 
                 //start game
                 if (command[0].equals("gamestart")){
@@ -148,7 +147,7 @@ public class ReceivingThread extends Thread {
                         Platform.runLater(() -> controllerGameScene.setEnemyGridPaneEnable());
                         Platform.runLater(() -> controllerGameScene.statusText.setText("YOUR TURN"));
                     }
-                }
+                } else
 
                 //response for my shoot
                 if (command[0].equals("my")){
@@ -179,7 +178,7 @@ public class ReceivingThread extends Thread {
                     } else {
                        // disconnectClient();
                     }
-                }
+                } else
 
                 //response for enemy shooting
                 if (command[0].equals("enemy")){
@@ -207,12 +206,12 @@ public class ReceivingThread extends Thread {
                     } else {
                         //disconnectClient();
                     }
-                }
+                } else
 
                 if (command[0].equals("activePlacing")){
                     Platform.runLater(() -> GlobalVariables.sceneChanger.changeToPlacingScene());
                     GlobalVariables.opponentName = command[1];
-                }
+                } else
 
                 if (command[0].equals("activeGame")){
                     GlobalVariables.opponentName = command[1];
@@ -229,11 +228,11 @@ public class ReceivingThread extends Thread {
                     Platform.runLater(() -> GlobalVariables.sceneChanger.changeToGameScene());
                     //send game state (activeGame;roomname;myplacing;enemyplacing;turn\n)
 
-                }
+                } else
 
                 if (command[0].equals("logged")){
                     Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
-                }
+                } else
 
                 if (command[0].equals("won")){
                     if (command.length == 2 && command[1].equals("ping")) {
@@ -241,15 +240,15 @@ public class ReceivingThread extends Thread {
                     } else {
                         Platform.runLater(() ->controllerGameScene.showAlert(1));
                     }
-                }
+                } else
 
                 if (command[0].equals("lost")){
                     Platform.runLater(() ->controllerGameScene.showAlert(0));
-                }
+                } else
 
                 if (command[0].equals("nickTaken")){
                     Platform.runLater(() -> GlobalVariables.sceneChanger.changeToLoginScene());
-                }
+                } else
 
                 if (playerRepeat){
                     if (command[0].equals("repeat")){
@@ -264,15 +263,18 @@ public class ReceivingThread extends Thread {
                         //GlobalVariables.getSendingThread().sendMessage("00214");
                     }
 
-                }
+                } else
 
                 if (command[0].equals("endGame")){
                     //if (GlobalVariables.getAlert().isShowing()){
                     //    GlobalVariables.getAlert().hide();
                     //}
                     Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
-                }
+                } else {
 
+                }
+                }
+                Platform.runLater(() -> controllerRoomPickerScene.showAlert(2));
 
 
             }
