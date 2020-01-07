@@ -3,6 +3,7 @@ package main.java.controllers;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -115,4 +116,12 @@ public class ControllerLoginScene {
         }*/
     }
 
+    public void showAlert(int i) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        if (i == 1){
+            alert.setTitle("Server is crazy");
+            alert.setContentText("Server is crazy!");
+        }
+        alert.setResizable(false);
+    }
 }

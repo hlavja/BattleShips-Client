@@ -255,8 +255,16 @@ public class ReceivingThread extends Thread {
                                                             //}
                                                             Platform.runLater(() -> GlobalVariables.sceneChanger.changeToRoomScene());
                                                         } else {
-
-                                                            Platform.runLater(() -> controllerRoomPickerScene.showAlert(2));
+                                                            Platform.runLater(() -> GlobalVariables.sceneChanger.changeToLoginScene());
+                                                            Platform.runLater(() -> controllerLoginScene.showAlert(1));
+                                                            if(GlobalVariables.pingThread != null){
+                                                                if (GlobalVariables.pingThread.threadActive){
+                                                                    GlobalVariables.pingThread.close();
+                                                                }
+                                                            }
+                                                            if (GlobalVariables.connected){
+                                                                GlobalVariables.getReceivingThread().disconnectClient();
+                                                            }
                                                         }
                 } else {
                     Platform.runLater(() -> controllerRoomPickerScene.showAlert(2));

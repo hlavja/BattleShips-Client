@@ -6,7 +6,7 @@ import javafx.application.Platform;
 public class PingThread extends Thread {
 
     final String ipAddress;
-    boolean threadActive = false;
+    public boolean threadActive = false;
 
     public PingThread(String ipAddress){
         this.ipAddress = ipAddress;
