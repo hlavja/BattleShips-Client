@@ -267,7 +267,7 @@ public class ReceivingThread extends Thread {
                                                             }
                                                         }
                 } else {
-                    Platform.runLater(() -> controllerRoomPickerScene.showAlert(2));
+                    Platform.runLater(() -> controllerLoginScene.showAlert(1));
                 }
 
 

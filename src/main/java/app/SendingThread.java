@@ -22,7 +22,7 @@ public class SendingThread {
             }
             outputStreamWriter.flush();
         } catch (SocketException f){
-            System.out.println("ERROR: Socket is closed");
+            //System.out.println("ERROR: Socket is closed");
         } catch (IOException e) {
             System.out.println("ERROR: Sender");
         }
