@@ -1,6 +1,7 @@
 package main.java.controllers;
 
 
+import com.sun.security.auth.NTUserPrincipal;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -50,7 +51,7 @@ public class ControllerLoginScene {
             return;
         }
 
-        if (!InputValidate.validateIP(ip)){
+        if (!InputValidate.validateIP(ip) || ip != null){
             InputValidate.showAlert("Input IP is not valid!");
             return;
         }
