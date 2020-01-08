@@ -1,8 +1,5 @@
 package main.java.controllers;
 
-
-import com.sun.security.auth.NTUserPrincipal;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -40,23 +37,23 @@ public class ControllerLoginScene {
 
     private SendingThread sendingThread;
 
-    public void connectToServer(javafx.event.ActionEvent event){
+    public void connectToServer(javafx.event.ActionEvent event) {
 
         String name = playerName.getText();
         String ip = serverIPAddress.getText();
         String port = serverPort.getText();
 
-        if(name.isEmpty()){
+        if (name.isEmpty()) {
             InputValidate.showAlert("Name field is empty");
             return;
         }
 
-        if (!InputValidate.validateIP(ip) || ip != null){
+        if (!InputValidate.validateIP(ip) || ip != null) {
             InputValidate.showAlert("Input IP is not valid!");
             return;
         }
 
-        if (!InputValidate.validatePort(port)){
+        if (!InputValidate.validatePort(port)) {
             InputValidate.showAlert("Input port is not valid!");
             return;
         }
@@ -80,8 +77,8 @@ public class ControllerLoginScene {
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss yyyy/MM/dd");
         LocalDateTime start = LocalDateTime.now();
-        System.out.println("Client was connected to server at "+dtf.format(start));
-        System.out.println("Server address: "+ serverIPAddress.getText()+" port: "+ serverPort.getText());
+        System.out.println("Client was connected to server at " + dtf.format(start));
+        System.out.println("Server address: " + serverIPAddress.getText() + " port: " + serverPort.getText());
 
         GlobalVariables.setSendingThread(sendingThread);
         GlobalVariables.setReceivingThread(receivingThread);
@@ -94,7 +91,6 @@ public class ControllerLoginScene {
         GlobalVariables.pingThread.start();
 
 
-
         int messageSize = 2 + GlobalVariables.playerName.length();
         GlobalVariables.getSendingThread().sendMessage(GlobalVariables.messagePattern(messageSize) + "01" + GlobalVariables.playerName);
         gui.setDisable(true);
@@ -102,13 +98,13 @@ public class ControllerLoginScene {
     }
 
 
-    public void initAfterGame(){
+    public void initAfterGame() {
         statusTextField.setText("Connected");
 
     }
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         SceneChanger sceneChanger = new SceneChanger();
         gui.setStyle("-fx-background-image: url('/main/resources/img/background.png'); -fx-background-position: center center;");
         GlobalVariables.sceneChanger = sceneChanger;
@@ -119,7 +115,7 @@ public class ControllerLoginScene {
 
     public void showAlert(int i) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        if (i == 1){
+        if (i == 1) {
             alert.setTitle("Server is crazy");
             alert.setContentText("Server is crazy!");
         }
